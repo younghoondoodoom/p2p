@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.7.4'
     id 'io.spring.dependency-management' version '1.0.14.RELEASE'
     id 'java'
+    id 'jacoco'
 }
 
 group = 'doodoom.project'
@@ -11,6 +12,13 @@ sourceCompatibility = '1.8'
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
+    }
+}
+
+jacocoTestReport {
+    reports {
+        csv.enabled true
+        xml.enabled true
     }
 }
 
